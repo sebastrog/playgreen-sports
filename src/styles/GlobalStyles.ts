@@ -13,8 +13,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: #eee;
+    background-color: ${(props) => props.theme.colors.background};
   }
-
 `
 
 export default GlobalStyle;
