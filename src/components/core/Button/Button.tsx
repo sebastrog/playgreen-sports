@@ -2,14 +2,15 @@ import { CustomButton } from './Button.styles'
 
 interface ButtonProps {
   title: string;
-  onClick: () => void;
+  onClick?: () => void;
   disabled: boolean;
+  type: "submit" | "button"
 }
 
-const Button: React.FC<ButtonProps> = ({title, onClick, disabled}) => {
+const Button: React.FC<ButtonProps> = ({title, onClick, type, disabled}) => {
   return (
     <>
-      <CustomButton onClick={onClick} disabled={disabled}>{title}{disabled ? "..." : ""}</CustomButton>
+      <CustomButton onClick={onClick} type={type} disabled={disabled}>{title}{disabled ? "..." : ""}</CustomButton>
     </>
   )
 }

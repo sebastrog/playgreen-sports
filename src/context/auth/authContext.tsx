@@ -7,7 +7,12 @@ interface AuthContextType {
   loading: boolean;
 }
 
-export const AuthContext = createContext<AuthContextType | undefined>(undefined);
+const defaultAuthContext: AuthContextType = {
+  user: null,
+  loading: true,
+};
+
+export const AuthContext = createContext<AuthContextType>(defaultAuthContext);
 
 interface AuthProviderProps {
   children: React.ReactNode;
