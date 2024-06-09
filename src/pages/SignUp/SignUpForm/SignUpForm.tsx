@@ -58,7 +58,7 @@ const SignUpForm = () => {
       <TextField type="password" name="password" label="Password"onChange={handleChange} />
       <FormCta>
         <Button title="Sign Up" type="submit" disabled={loading} />
-        <Link to="/signup">Create an account</Link>
+        <Link to="/">Login</Link>
       </FormCta>
     </FormContainer>
   )
