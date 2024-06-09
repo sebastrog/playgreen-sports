@@ -12,8 +12,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: #eee;
     background-color: ${(props) => props.theme.colors.background};
+    font-family: 'Epilogue Variable', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Sans Variable', sans-serif;
   }
 `
 
