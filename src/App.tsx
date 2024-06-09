@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import "@fontsource-variable/dm-sans";
+import "@fontsource-variable/epilogue";
 
 import { ThemeProviderWrapper } from "./context/theme/themeContext";
 
