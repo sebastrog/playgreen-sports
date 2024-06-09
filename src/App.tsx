@@ -1,8 +1,12 @@
+import { Routes, Route } from "react-router-dom";
+
+import Login from "./pages/Login";
+
 function App() {
   return (
-    <>
-      PlayGreen App
-    </>
+    <Routes>
+      <Route path="/" element={<Login />} />
+    </Routes>
   )
 }
 
