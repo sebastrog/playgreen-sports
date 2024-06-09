@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 import { ThemeProviderWrapper } from "./context/theme/themeContext";
 
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
       </Routes>
+      <Toaster />
       <GlobalStyle />
     </ThemeProviderWrapper>
   )
