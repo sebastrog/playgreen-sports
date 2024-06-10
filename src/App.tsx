@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { AnimatePresence } from "framer-motion";
 import "@fontsource-variable/dm-sans";
 import "@fontsource-variable/epilogue";
 
@@ -17,26 +18,28 @@ import ProtectedRoute from "./components/PotectedRoute";
 function App() {
   return (
     <ThemeProviderWrapper>
-      <Routes>
-        <Route
-          path="/home"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/history"
-          element={
-            <ProtectedRoute>
-              <History />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/" element={<Login />} />
-      </Routes>
+      <AnimatePresence>
+        <Routes>
+          <Route
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/history"
+            element={
+              <ProtectedRoute>
+                <History />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/" element={<Login />} />
+        </Routes>
+      </AnimatePresence>
       <Toaster />
       <GlobalStyle />
     </ThemeProviderWrapper>
