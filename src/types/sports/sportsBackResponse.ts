@@ -10,3 +10,7 @@ export interface Sport {
 export interface SportsResponse {
   sports: Sport[];
 }
+
+export interface Reaction extends Sport {
+  reaction: number;
+}
