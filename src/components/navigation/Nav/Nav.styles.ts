@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { baseColors } from '../../../styles/theme';
 
 export const NavigationContainer = styled.nav`
   background-color: ${(props) => props.theme.colors.miniCard};
