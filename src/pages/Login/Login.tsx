@@ -1,14 +1,15 @@
-import { useEffect } from "react"
-import { useNavigate } from "react-router-dom"
-import { useAuth } from "../../hooks/auth/useAuth"
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/auth/useAuth";
 
-import LayoutHeading from "../../components/layouts/LayoutHeading"
+import LayoutHeading from "../../components/layouts/LayoutHeading";
 
-import LoginForm from "./LoginForm"
+import LoginForm from "./LoginForm";
 
 const Login = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
+  console.log('user', user);
 
   useEffect(() => {
     if (user) {

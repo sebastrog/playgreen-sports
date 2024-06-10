@@ -25,6 +25,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'DM Sans Variable', sans-serif;
   }
 
+  button {
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+  }
+
   .main-wrapper {
     width: 300px;
     margin: 0 auto;
