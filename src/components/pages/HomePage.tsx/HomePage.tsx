@@ -11,12 +11,13 @@ import {
   DislikeBtn,
   ActionsContainer,
 } from "./HomePage.styles";
+import Card from "../../core/Card";
 
 const HomePage = () => {
   
   const { themeMode, toggleThemeMode } = useContext(ThemeContext);
 
-  const handleReaction = async (reaction) => {
+  const handleReaction = async (reaction:number) => {
     console.log("click", reaction);
   };
 
@@ -27,7 +28,12 @@ const HomePage = () => {
         {themeMode === "light" ? "dark" : "light" }
       </ThemeModeContainer>
 
-      <CardList />
+      <CardList>
+        <Card
+          title="Soccer"
+          thumb="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Football_in_Bloomington%2C_Indiana%2C_1995.jpg/640px-Football_in_Bloomington%2C_Indiana%2C_1995.jpg"
+        />
+      </CardList>
 
       <ActionsContainer>
         <DislikeBtn
