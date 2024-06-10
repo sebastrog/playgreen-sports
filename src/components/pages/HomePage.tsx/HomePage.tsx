@@ -12,7 +12,7 @@ import LayoutNotFound from "../../layouts/LayoutNotFound";
 
 import { SportsResponse, Reaction } from "../../../types/sports/sportsBackResponse";
 
-import { IconClose, IconDark, IconHeart, IconLight } from "../../Icons";
+import { IconClose, IconDark, IconHeart, IconLight } from "../../core/Icons";
 
 import {
   ThemeModeContainer,
@@ -22,15 +22,6 @@ import {
   ActionsContainer,
 } from "./HomePage.styles";
 import Card from "../../core/Card";
-
-export interface Sport {
-  idSport: string;
-  strSport: string;
-  strFormat: string;
-  strSportThumb: string;
-  strSportIconGreen: string;
-  strSportDescription: string;
-}
 
 const HomePage = () => {
   const { loading, data, error } = useFetch<SportsResponse>(allSports);

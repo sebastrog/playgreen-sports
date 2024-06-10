@@ -53,6 +53,7 @@ const useUpdateReactions = () => {
       const firebaseError = error as FirebaseError;
       const errorMessage = firebaseError.message;
       setError(errorMessage);
+    } finally {
       setLoading(false);
     }
   };
