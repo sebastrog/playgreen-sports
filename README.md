@@ -1,30 +1,73 @@
-# React + TypeScript + Vite
+# PlayGreen - Sports Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Develop the PlayGreen - Sports application using ReactJS, consuming an API to fetch random sports photos and implementing a like and dislike functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## API suggestion:
+- 
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- API consumption to fetch sports photos. ✅
+- Like and dislike functionality. ✅
+- Authentication with Firebase. ✅
+- Save storage in Firestore. ✅
+- Dark mode. ✅
+- Responsive design. ✅
+- Animations (general and Tinder-like slide).
+- PWA (Progressive Web App).
 
-- Configure the top-level `parserOptions` property like this:
+## Prerequisites
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Node.js and pnpm or npm installed.
+- Firebase account for authentication and Firestore.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Installation
+
+1. Clone the repository:
+    
+    ```bash
+    git clone <https://github.com/your-username/playgreen-sports.git>
+    cd playgreen-sports
+    ```
+    
+2. Install dependencies:
+    
+    ```bash
+    pnpm install or npm install
+    ```
+    
+3. Configure Firebase:
+    - Create a project in Firebase.
+    - Enable authentication and Firestore.
+    - Create a `.env` file in the root of the project with your Firebase credentials:
+    
+    ```
+    VITE_API_KEY=your_api_key
+    VITE_AUTH_DOMAIN=your_auth_domain
+    VITE_PROJECT_ID=your_project_id
+    VITE_STORAGE_BUCKET=your_storage_bucket
+    VITE_SENDER_ID=your_messaging_sender_id
+    VITE_APP_ID=your_app_id
+    ```
+    
+4. Run the application:
+    
+    ```bash
+    pnpm run dev or npm run dev
+    ```
+    
+## Technologies Used
+
+- ReactJS
+- TypeScript
+- Axios
+- Styled-components
+- Firebase (Authentication and Firestore)
+- Toast (Alerts)
+- Framer Motion (Pages Transition)
+
+## Deployment
+
+The application is deployed at [deployment-link](https://playgreen-sports-cf485.web.app/).
