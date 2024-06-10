@@ -1,6 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../hooks/auth/useAuth';
 import LoadingWrapper from './layouts/LoadingWrapper';
+import Nav from './navigation/Nav';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -18,6 +19,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({children}) => {
   return (
     <main className="main-wrapper">
       {children}
+      <Nav />
     </main>
   );
 };
