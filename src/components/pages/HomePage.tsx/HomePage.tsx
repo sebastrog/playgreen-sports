@@ -19,6 +19,7 @@ import {
   ActionsContainer,
 } from "./HomePage.styles";
 import Card from "../../core/Card";
+import { IconClose, IconDark, IconHeart, IconLight } from "../../Icons";
 
 const HomePage = () => {
   const { loading, data, error } = useFetch<SportsResponse>(allSports);
@@ -36,7 +37,7 @@ const HomePage = () => {
   return (
     <LayoutSection>
       <ThemeModeContainer onClick={toggleThemeMode}>
-        {themeMode === "light" ? "dark" : "light" }
+        {themeMode === "light" ? <IconDark /> : <IconLight />}
       </ThemeModeContainer>
 
       {data?.sports && data.sports.length > 0 ? (
@@ -55,13 +56,13 @@ const HomePage = () => {
         <DislikeBtn
           onClick={() => handleReaction(0)}
         >
-          x
+          <IconClose />
         </DislikeBtn>
 
         <LikeBtn
           onClick={() => handleReaction(1)}
         >
-          heart
+          <IconHeart fill="#ffffff" />
         </LikeBtn>
       </ActionsContainer>
     </LayoutSection>
