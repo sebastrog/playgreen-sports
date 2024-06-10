@@ -1,8 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import { allSports } from "../../../services";
 
 import { ThemeContext } from "../../../context/theme/themeContext";
 
+import useFetch from "../../../hooks/data/useFetch";
+
 import LayoutSection from "../../layouts/LayoutSection"
+import LoadingWrapper from "../../layouts/LoadingWrapper";
+import LayoutNotFound from "../../layouts/LayoutNotFound";
+
+import { SportsResponse } from "../../../types/sports/sportsBackResponse";
 
 import {
   ThemeModeContainer,
@@ -14,8 +21,13 @@ import {
 import Card from "../../core/Card";
 
 const HomePage = () => {
+  const { loading, data, error } = useFetch<SportsResponse>(allSports);
   
   const { themeMode, toggleThemeMode } = useContext(ThemeContext);
+  const [currentIndex] = useState(0); 
+
+  if (loading) return <LoadingWrapper height="490px" />;
+  if (error) return <LayoutNotFound>Error fetching sports.</LayoutNotFound>;
 
   const handleReaction = async (reaction:number) => {
     console.log("click", reaction);
@@ -24,16 +36,20 @@ const HomePage = () => {
   return (
     <LayoutSection>
       <ThemeModeContainer onClick={toggleThemeMode}>
-        {/* {themeMode === "light" ? <IconDark /> : <IconLight />} */}
         {themeMode === "light" ? "dark" : "light" }
       </ThemeModeContainer>
 
-      <CardList>
-        <Card
-          title="Soccer"
-          thumb="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Football_in_Bloomington%2C_Indiana%2C_1995.jpg/640px-Football_in_Bloomington%2C_Indiana%2C_1995.jpg"
-        />
-      </CardList>
+      {data?.sports && data.sports.length > 0 ? (
+        <CardList>
+          <Card
+            key={data.sports[currentIndex].idSport}
+            title={data.sports[currentIndex].strSport}
+            thumb={data.sports[currentIndex].strSportThumb}
+          />
+        </CardList>
+      ) : (
+        <LayoutNotFound>No sports found.</LayoutNotFound>
+      )}
 
       <ActionsContainer>
         <DislikeBtn
