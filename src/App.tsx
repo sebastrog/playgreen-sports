@@ -8,6 +8,7 @@ import { ThemeProviderWrapper } from "./context/theme/themeContext";
 import GlobalStyle from "./styles/GlobalStyles";
 
 import Home from "./pages/Home";
+import History from "./pages/History";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 
@@ -22,6 +23,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Home />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/history"
+          element={
+            <ProtectedRoute>
+              <History />
             </ProtectedRoute>
           }
         />

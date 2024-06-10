@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface HeadingProps {
-  $textAlign: 'center' | 'right';
+  $textAlign: 'center' | 'right' | 'left';
 }
 
 export const Heading = styled.div<HeadingProps>`
@@ -9,7 +9,7 @@ export const Heading = styled.div<HeadingProps>`
   display: flex;
   gap: 15px;
   flex-direction: column;
-  text-align: ${(props) => props.$textAlign || 'left'};
+  text-align: ${(props) => props.$textAlign};
 
   .title {
     font-size: 42px;
